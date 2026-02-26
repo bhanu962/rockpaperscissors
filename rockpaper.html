@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <h1 class="p1">Rock Paper Scissors</h1>
+    <button class="b1" onclick="
+    rock('rock');"><img src="rock-emoji (2).png" class="i1"></button>
+    <button class="b1" onclick="paper('paper');"><img src="paper-emoji (2).png"class="i1"></button>
+    <button class="b1" onclick="scissor('scissor');"><img src="scissors-emoji (2).png" class="i1"></button>
+    <p class="p2"></p>
+    <p class="p3"></p>
+    <p class="p4"></p>
+    <button class="b2" onclick="reset();">Reset score</button>
+    <script>
+      obj={
+        wins:0,
+        losses:0,
+        tie:0
+      };
+      function rock(usermove)
+      {
+      let computermove=Math.random();
+      if(computermove<=0.3)
+      computermove='rock';
+      else if(computermove>0.3&&computermove<=0.6)
+      computermove='paper';
+      else
+      computermove='scissor';
+      
+      if(computermove===usermove)
+      {
+      document.querySelector('.p2').innerHTML='You Tie';
+      document.querySelector('.p3').innerHTML=`you <img src="rock-emoji (2).png" class="i2"> <img src="rock-emoji (2).png" class="i2"> computer`;
+      obj.tie+=1;
+      document.querySelector('.p4').innerHTML=`Wins:${obj.wins},losses:${obj.losses},Tie:${obj.tie}`
+      }
+      else if(computermove==='paper')
+      {
+      document.querySelector('.p2').innerHTML='You Lose';
+      document.querySelector('.p3').innerHTML=`you <img src="rock-emoji (2).png" class="i2"> <img src="paper-emoji (2).png" class="i2"> computer`;
+      obj.losses+=1;
+      document.querySelector('.p4').innerHTML=`Wins:${obj.wins},losses:${obj.losses},Tie:${obj.tie}`
+      }
+      else
+      {
+      document.querySelector('.p2').innerHTML='You Win'
+      document.querySelector('.p3').innerHTML=`you <img src="rock-emoji (2).png" class="i2"> <img src="Scissors-emoji (2).png" class="i2"> computer`;
+      obj.wins+=1;
+      document.querySelector('.p4').innerHTML=`Wins:${obj.wins},losses:${obj.losses},Tie:${obj.tie}`
+      }
+    }
+      function paper(usermove)
+      {
+      let computermove=Math.random();
+      if(computermove<=0.3)
+      computermove='rock';
+      else if(computermove>0.3&&computermove<=0.6)
+      computermove='paper';
+      else
+      computermove='scissor';
+      
+      if(computermove===usermove)
+      {
+      document.querySelector('.p2').innerHTML='You Tie';
+      document.querySelector('.p3').innerHTML=`you <img src="paper-emoji (2).png" class="i2"> <img src="paper-emoji (2).png" class="i2"> computer`;
+      obj.tie+=1;
+      document.querySelector('.p4').innerHTML=`Wins:${obj.wins},losses:${obj.losses},Tie:${obj.tie}`
+      }
+      else if(computermove==='scissor')
+      {
+      document.querySelector('.p2').innerHTML='You Lose';
+      document.querySelector('.p3').innerHTML=`you <img src="paper-emoji (2).png" class="i2"> <img src="Scissors-emoji (2).png" class="i2"> computer`;
+      obj.losses+=1;
+      document.querySelector('.p4').innerHTML=`Wins:${obj.wins},losses:${obj.losses},Tie:${obj.tie}`
+      }
+      else
+      {
+      document.querySelector('.p2').innerHTML='You Win'
+      document.querySelector('.p3').innerHTML=`you <img src="paper-emoji (2).png" class="i2"> <img src="rock-emoji (2).png" class="i2"> computer`;
+      obj.wins+=1;
+      document.querySelector('.p4').innerHTML=`Wins:${obj.wins},losses:${obj.losses},Tie:${obj.tie}`
+      }
+    }
+      function scissor(usermove)
+      {
+      let computermove=Math.random();
+      if(computermove<=0.3)
+      computermove='rock';
+      else if(computermove>0.3&&computermove<=0.6)
+      computermove='paper';
+      else
+      computermove='scissor';
+      
+      if(computermove===usermove)
+      {
+      document.querySelector('.p2').innerHTML='You Tie';
+      document.querySelector('.p3').innerHTML=`you <img src="scissors-emoji (2).png" class="i2"> <img src="scissors-emoji (2).png" class="i2"> computer`;
+      obj.tie+=1;
+      document.querySelector('.p4').innerHTML=`Wins:${obj.wins},losses:${obj.losses},Tie:${obj.tie}`
+      }
+      else if(computermove==='paper')
+      {
+      document.querySelector('.p2').innerHTML='You Lose';
+      document.querySelector('.p3').innerHTML=`you <img src="scissors-emoji (2).png" class="i2"> <img src="rock-emoji (2).png" class="i2"> computer`;
+      obj.losses+=1;
+      document.querySelector('.p4').innerHTML=`Wins:${obj.wins},losses:${obj.losses},Tie:${obj.tie}`
+      }
+      else
+      {
+      document.querySelector('.p2').innerHTML='You Win';
+      document.querySelector('.p3').innerHTML=`you <img src="scissors-emoji (2).png" class="i2"> <img src="paper-emoji (2).png" class="i2"> computer`;
+      obj.wins+=1;
+      document.querySelector('.p4').innerHTML=`Wins:${obj.wins},losses:${obj.losses},Tie:${obj.tie}`
+      }
+    }
+    function reset()
+    {
+      obj.wins=0;
+      obj.losses=0;
+      obj.tie=0;
+      document.querySelector('.p4').innerHTML=`Wins:${obj.wins},losses:${obj.losses},Tie:${obj.tie}`;
+    }
+      
+    </script>
+  </body>
+  <head>
+    <style>
+      .p1
+      {
+      font-family:arial;
+      color:white;
+     
+      }
+      body
+      {
+        background-color: black;
+      }
+      .b1
+      {
+      border-radius:50%;
+      border-color:solid;
+      border-width:1px;
+      border-color:white;
+      margin-right:20px;
+      }
+      .i1
+      {
+        width:100px;
+        padding:10px;
+        margin-left:0px;
+      }
+      .p2
+      {
+        margin-top:20px;
+        font-family:arial;
+        color:white;
+        font-size:30px;
+        font-weight:bold;
+      }
+      .p3
+      {
+        color:white;
+        font-family:arial;
+        font-weight:bold;
+        vertical-align: middle;
+        font-size:30px;
+      }
+      .p4
+      {
+        color:white;
+        font-family:arial;
+        font-weight:bold;
+        font-size:20px;
+      }
+      .i2
+      {
+        width:40px;
+        vertical-align:middle;
+      }
+      .b2
+      {
+        font-family:arial;
+        font-size:20px;
+        padding:10px;
+      
+      }
+    </style>
+  </head>
+</html>
